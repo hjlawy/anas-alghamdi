@@ -1,0 +1,94 @@
+import React from 'react'
+import Head from 'next/head'
+import Image from 'next/image'
+import ProjectCard from '../components/ProjectCard'
+
+export default function Home() {
+  return (
+    <div className="min-h-screen bg-gray-100 py-10 px-4 sm:px-6 lg:px-8">
+      <Head>
+        <title>Anas Alghamdi - Software Engineer</title>
+        <meta name="description" content="Anas Alghamdi's personal portfolio" />
+        <link rel="icon" href="/favicon.ico" />
+      </Head>
+
+      <main className="max-w-4xl mx-auto">
+        <header className="text-center mb-12">
+          <Image
+            src="/Anas-Alghamdi-profile.jpg"
+            alt="Anas Alghamdi's profile picture"
+            width={150}
+            height={150}
+            className="rounded-full mx-auto mb-4"
+          />
+          <h1 className="text-4xl font-bold mb-2">Hi, I'm Anas Alghamdi</h1>
+          <p className="text-xl text-gray-600 mb-4">
+            Passionate software engineer with a knack for creating innovative solutions and user-friendly applications
+          </p>
+          <div className="flex justify-center space-x-4">
+            <a href="https://linkedin.com/in/anasalghamdi" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:text-blue-800">
+              LinkedIn
+            </a>
+            <a href="https://github.com/anasalghamdi" target="_blank" rel="noopener noreferrer" className="text-gray-800 hover:text-black">
+              GitHub
+            </a>
+          </div>
+        </header>
+
+        <section className="mb-12">
+          <h2 className="text-2xl font-bold mb-4">Projects</h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <ProjectCard
+              title="E-commerce Platform"
+              description="A full-stack e-commerce solution with user authentication, product management, and payment integration"
+              technologies={['React', 'Node.js', 'MongoDB', 'Stripe']}
+              githubLink="https://github.com/johndoe/ecommerce-platform"
+            />
+            <ProjectCard
+              title="Task Management App"
+              description="A responsive web application for efficient task organization and team collaboration"
+              technologies={['Vue.js', 'Express', 'PostgreSQL', 'Socket.io']}
+              githubLink="https://github.com/johndoe/task-manager"
+            />
+          </div>
+        </section>
+
+        <section className="mb-12">
+          <h2 className="text-2xl font-bold mb-4">Skills</h2>
+          <ul className="grid grid-cols-2 md:grid-cols-3 gap-4">
+            <li className="flex items-center">
+              <span className="mr-2">🚀</span> JavaScript (ES6+)
+            </li>
+            <li className="flex items-center">
+              <span className="mr-2">⚛️</span> React.js
+            </li>
+            <li className="flex items-center">
+              <span className="mr-2">🟢</span> Node.js
+            </li>
+            <li className="flex items-center">
+              <span className="mr-2">📘</span> TypeScript
+            </li>
+            <li className="flex items-center">
+              <span className="mr-2">🎨</span> CSS3 / Sass
+            </li>
+            <li className="flex items-center">
+              <span className="mr-2">🗄️</span> SQL / NoSQL
+            </li>
+          </ul>
+        </section>
+
+        <section className="mb-12">
+          <h2 className="text-2xl font-bold mb-4">About Me</h2>
+          <p className="text-gray-700 mb-4">
+            I'm a software engineer with 5 years of experience in developing web applications. My passion lies in creating efficient, scalable, and user-friendly solutions. When I'm not coding, you can find me exploring new technologies, contributing to open-source projects, or enjoying outdoor activities.
+          </p>
+        </section>
+
+        <footer className="text-center text-gray-600">
+          <p>© {new Date().getFullYear()} Made by Anas Alghamdi</p>
+          <p>All Rights Reserved</p>
+        </footer>
+      </main>
+    </div>
+  )
+}
